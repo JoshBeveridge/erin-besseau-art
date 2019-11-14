@@ -42,7 +42,16 @@
         <div data-c-padding="bottom(3)">
             <div data-c-container="large">
                 <span id="posts"></span>
-                <h2 data-c-font-size="h2" data-c-padding="top(3)">Recent Work</h2>
+                <h2 data-c-font-size="h2" data-c-padding="top(3)" data-c-margin="bottom(2)">Recent Work</h2>
+                <div data-c-grid="gutter(all, 2)">
+                {{ range .Pages }}
+                    {{ range .Pages }}
+                        <div data-c-grid-item="tp(1of2) tl(1of3) dl(1of4)">
+                            <a class="index-work"  href="{{ .Permalink }}" style="background-image: url('{{ .Params.main }}')" data-c-padding="all(4)"></a>
+                        </div>
+                    {{ end }}
+                {{ end }}
+                </div>
             </div>
         </div>
 	</main>
