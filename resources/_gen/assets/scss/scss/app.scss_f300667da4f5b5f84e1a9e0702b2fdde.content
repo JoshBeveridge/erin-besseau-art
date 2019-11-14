@@ -19255,6 +19255,8 @@ body[data-clone] {
   vertical-align: middle; }
 
 [data-clone] header {
+  align-items: center;
+  display: flex;
   min-height: 100vh;
   position: relative; }
   [data-clone] header::before {
@@ -19274,12 +19276,12 @@ body[data-clone] {
 
 [data-clone] .flourish {
   border: 3px solid #a58451;
-  height: 5vw;
+  height: 5rem;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%) rotate(45deg);
-  width: 5vw; }
+  width: 5rem; }
 
 [data-clone] .hero-profile {
   border-radius: 3px;

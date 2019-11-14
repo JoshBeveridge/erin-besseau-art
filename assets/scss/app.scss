@@ -125,6 +125,8 @@ $clone-grid-columns: 12;
         }
     }
     header {
+        align-items: center;
+        display: flex;
         min-height: 100vh;
         position: relative;
         &::before {
@@ -144,12 +146,12 @@ $clone-grid-columns: 12;
     }
     .flourish {
         border: 3px solid $clone-c4;
-        height: 5vw;
+        height: 5rem;
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 50%) rotate(45deg);
-        width: 5vw;
+        width: 5rem;
     }
     .hero-profile {
         border-radius: 3px;
