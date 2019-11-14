@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {{ $scss := resources.Get "scss/app.scss" | toCSS }}
         <link rel="stylesheet" href="{{ $scss.Permalink }}">
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     </head>
     <body data-clone>
         <!-- Code that all your templates share, like a header -->
