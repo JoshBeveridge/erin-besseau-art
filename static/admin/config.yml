@@ -13,13 +13,13 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "work"}
       - {label: "Title", required: true, name: "title", widget: "string"}
       - {label: "Publish Date", required: true, name: "date", widget: "datetime"}
-      - {label: "Media", required: true, name: "media", widget: "string"}
+      - {label: "Types of Media Used", required: true, name: "media", widget: "string"}
       - {label: "Canvas", name: "canvas", widget: "string"}
-      - {label: "Size", name: "size", widget: "string"}
+      - {label: "Size of Work", name: "size", widget: "string"}
       - {label: "Price", name: "price", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Description", name: "body", widget: "markdown"}
       - {label: "Main Image", required: true, name: "main", widget: "image"}
-      - {label: "Orientation", name: "Orientation", widget: "select", options: ["Landscape", "Portrait"], default: ["Landscape"]}
+      - {label: "Orientation", name: "orientation", widget: "select", options: ["Landscape", "Portrait"], default: ["Landscape"]}
