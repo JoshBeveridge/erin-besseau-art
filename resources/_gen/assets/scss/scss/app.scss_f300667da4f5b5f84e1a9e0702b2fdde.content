@@ -19295,4 +19295,5 @@ body[data-clone] {
 [data-clone] .index-work {
   background-position: center;
   background-size: cover;
-  display: block; }
+  display: block;
+  width: 100%; }
