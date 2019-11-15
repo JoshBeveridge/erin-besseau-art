@@ -1,6 +1,20 @@
 {{ define "main" }}
 	<main aria-role="main">
-		HELLO WORK PAGE
-        {{ .Title }}
+		<div data-c-padding="tb(1)" data-c-background="c3(100)">
+            <div data-c-container="large">
+                <a href="/">Go Back</a>
+            </div>
+        </div>
+        <div>
+            <div data-c-container="large">
+                <h1 data-c-margin="top(2)">{{ .Title }}</h1>
+                <div data-c-padding="tb(2)">
+                    <a href="{{ .Params.main }}" title="" target="_blank">
+                        <img src="{{ .Params.main }}" alt="" data-c-radius="rounded">
+                    </a>
+                </div>
+                {{ .Content }}
+            </div>
+        </div>
 	</main>
 {{ end }}
