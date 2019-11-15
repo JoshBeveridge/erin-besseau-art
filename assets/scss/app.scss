@@ -120,8 +120,12 @@ $clone-grid-columns: 12;
         img {
             width: 1.5rem;
             margin-top: -.3rem;
-            margin-left: .5rem;
+            margin-right: .5rem;
             vertical-align: middle;
+        }
+        span+img {
+            margin-right: 0;
+            margin-left: .5rem;
         }
     }
     header {
@@ -146,12 +150,16 @@ $clone-grid-columns: 12;
     }
     .flourish {
         border: 3px solid $clone-c4;
+        display: none;
         height: 5rem;
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 50%) rotate(45deg);
         width: 5rem;
+        @media #{$clone-tablet-landscape} {
+            display: block;
+        }
     }
     .hero-profile {
         border-radius: 3px;

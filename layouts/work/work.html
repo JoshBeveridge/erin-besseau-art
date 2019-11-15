@@ -1,13 +1,16 @@
 {{ define "main" }}
 	<main aria-role="main">
-		<div data-c-padding="tb(1)" data-c-background="c3(100)">
+		<div data-c-padding="tb(1)" data-c-background="c2(100)">
             <div data-c-container="large">
-                <a href="/">Go Back</a>
+                {{ $arrowLeftWhite := resources.Get "images/icons/chevron-left-white.svg" }}
+                <a class="anchor-icon" data-c-color="white" href="/"><img src="{{ $arrowLeftWhite.Permalink }}" alt="A left arrow."><span>Go Back</span></a>
             </div>
         </div>
-        <div>
+        <div data-c-padding="bottom(2)">
             <div data-c-container="large">
-                <h1 data-c-margin="top(2)">{{ .Title }}</h1>
+                <h1 data-c-font-size="h1" data-c-font-weight="bold" data-c-color="c4" data-c-margin="top(2)">{{ .Title }}</h1>
+                <p data-c-margin="top(1)">{{ .Params.size }}</p>
+                <p data-c-margin="top(1)">{{ .Params.media }} on {{ .Params.canvas }}.</p>
                 <div data-c-padding="tb(2)">
                     <a href="{{ .Params.main }}" title="" target="_blank">
                         <img src="{{ .Params.main }}" alt="" data-c-radius="rounded">

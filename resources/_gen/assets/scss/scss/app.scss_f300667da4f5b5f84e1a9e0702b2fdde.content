@@ -19251,8 +19251,12 @@ body[data-clone] {
 [data-clone] .anchor-icon img {
   width: 1.5rem;
   margin-top: -.3rem;
-  margin-left: .5rem;
+  margin-right: .5rem;
   vertical-align: middle; }
+
+[data-clone] .anchor-icon span + img {
+  margin-right: 0;
+  margin-left: .5rem; }
 
 [data-clone] header {
   align-items: center;
@@ -19276,12 +19280,16 @@ body[data-clone] {
 
 [data-clone] .flourish {
   border: 3px solid #a58451;
+  display: none;
   height: 5rem;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%) rotate(45deg);
   width: 5rem; }
+  @media screen and (min-width: 64em) {
+    [data-clone] .flourish {
+      display: block; } }
 
 [data-clone] .hero-profile {
   border-radius: 3px;
