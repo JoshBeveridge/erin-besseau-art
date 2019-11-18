@@ -4,7 +4,7 @@ title: Ambergris Caye
 date: 2019-11-16T23:35:37.977Z
 media: 'Watercolour, Gouache, Oil Marker'
 canvas: Coldpress Watercolour Paper
-size: 18x24
+size: 18" x 24"
 sale: true
 price: 300
 main: /images/uploads/ambergris-caye-erin-besseau.jpg
