@@ -3,7 +3,7 @@ layout: work
 title: Ambergris Caye
 date: 2019-11-16T23:35:37.977Z
 media: 'Watercolour, Gouache, Oil Marker'
-canvas: Coldpressed Watercolour Paper
+canvas: Coldpress Watercolour Paper
 size: 18x24
 sale: true
 price: 300
