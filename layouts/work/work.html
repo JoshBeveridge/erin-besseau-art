@@ -1,9 +1,9 @@
 {{ define "main" }}
 	<main aria-role="main">
-		<div data-c-padding="tb(2)" data-c-overlay="c2(90)" style="background-image: url('{{ .Params.header }}');">
+		<div data-c-padding="tb(2)" data-c-overlay="c2(90)" style="background-image: url('{{ .Params.header }}');" data-c-align="base(center) tl(left)">
             <div data-c-container="large">
                 {{ $arrowLeftWhite := resources.Get "images/icons/chevron-left-white.svg" }}
-                <a class="anchor-icon" data-c-color="white" href="/"><img src="{{ $arrowLeftWhite.Permalink }}" alt="A left arrow."><span>Go Back</span></a>
+                <a class="anchor-icon" data-c-color="white" href="/"><img src="{{ $arrowLeftWhite.Permalink }}" alt="A left arrow."><span>Return Home</span></a>
                 <h1 data-c-font-size="h1" data-c-font-weight="bold" data-c-color="c4" data-c-margin="tb(1)">{{ .Title }}</h1>
                 <p data-c-margin="top(1)" data-c-color="white">{{ .Params.size }} | {{ .Params.media }} on {{ .Params.canvas }}.</p>
             </div>
@@ -17,15 +17,15 @@
                         </a>
                     </div>
                     <div data-c-grid-item="tl(2of5)">
-                        <div class="post-cta" data-c-padding="all(1)" data-c-radius="rounded" data-c-margin="bottom(2)" data-c-color="white">
+                        <div class="post-cta" data-c-padding="all(1)" data-c-radius="rounded" data-c-margin="bottom(2)" data-c-color="white" data-c-align="base(center) tl(left)">
                             {{ if (eq .Params.sale true) }}
-                                <p data-c-font-weight="bold" data-c-font-size="h4" data-c-margin="bottom(1)" data-c-color="c2">Currently for sale.</p>
+                                <p data-c-font-weight="bold" data-c-font-size="h4" data-c-margin="bottom(1)">{{ .Params.title }} is currently for sale.</p>
                                 <p data-c-margin="bottom(1)">Price: ${{ .Params.price }}</p>
                                 <p data-c-margin="bottom(1)">Get in touch with Erin to discuss purchasing this piece.</p>
                                 <a data-c-button="outline(white)" data-c-radius="rounded" href="mailto:erinbesseau@gmail.com" title="Open your default mail client and email Erin.">Get in Touch</a>
                             {{ else }}
-                                <p data-c-font-weight="bold" data-c-font-size="h4" data-c-margin="bottom(1)" data-c-color="c2">No longer for sale.</p>
-                                <p data-c-margin="bottom(1)">Erin does commission work. Interested in commissioning a piece?</p>
+                                <p data-c-font-weight="bold" data-c-font-size="h4" data-c-margin="bottom(1)">{{ .Params.title }} is no longer for sale.</p>
+                                <p data-c-margin="bottom(1)">Unfortunately this piece is no longer available, however Erin does commission work. If you're interested in commissioning a piece, use the button below to get in contact.</p>
                                 <a data-c-button="outline(white)" data-c-radius="rounded" href="mailto:erinbesseau@gmail.com" title="Open your default mail client and email Erin.">Get in Touch</a>
                             {{ end }}
                         </div>
@@ -34,5 +34,6 @@
                 </div>
             </div>
         </div>
+        {{ partial "footer.html" . }}
 	</main>
 {{ end }}
