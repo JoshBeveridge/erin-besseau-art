@@ -19307,3 +19307,10 @@ body[data-clone] {
   background-size: cover;
   display: block;
   width: 100%; }
+
+[data-clone] .post-cta {
+  background: #1d2226 !important;
+  background: -moz-linear-gradient(320deg, rgba(29, 34, 38, 0.95) 0%, rgba(100, 117, 81, 0.89958) 100%) !important;
+  background: -webkit-linear-gradient(320deg, rgba(29, 34, 38, 0.95) 0%, rgba(100, 117, 81, 0.89958) 100%) !important;
+  background: linear-gradient(320deg, rgba(29, 34, 38, 0.95) 0%, rgba(100, 117, 81, 0.89958) 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d2226",endColorstr="#647551",GradientType=1) !important; }

@@ -1,22 +1,37 @@
 {{ define "main" }}
 	<main aria-role="main">
-		<div data-c-padding="tb(1)" data-c-background="c2(100)">
+		<div data-c-padding="tb(2)" data-c-overlay="c2(90)" style="background-image: url('{{ .Params.header }}');">
             <div data-c-container="large">
                 {{ $arrowLeftWhite := resources.Get "images/icons/chevron-left-white.svg" }}
                 <a class="anchor-icon" data-c-color="white" href="/"><img src="{{ $arrowLeftWhite.Permalink }}" alt="A left arrow."><span>Go Back</span></a>
+                <h1 data-c-font-size="h1" data-c-font-weight="bold" data-c-color="c4" data-c-margin="tb(1)">{{ .Title }}</h1>
+                <p data-c-margin="top(1)" data-c-color="white">{{ .Params.size }} | {{ .Params.media }} on {{ .Params.canvas }}.</p>
             </div>
         </div>
-        <div data-c-padding="bottom(2)">
-            <div data-c-container="large">
-                <h1 data-c-font-size="h1" data-c-font-weight="bold" data-c-color="c4" data-c-margin="top(2)">{{ .Title }}</h1>
-                <p data-c-margin="top(1)">{{ .Params.size }}</p>
-                <p data-c-margin="top(1)">{{ .Params.media }} on {{ .Params.canvas }}.</p>
-                <div data-c-padding="tb(2)">
-                    <a href="{{ .Params.main }}" title="" target="_blank">
-                        <img src="{{ .Params.main }}" alt="" data-c-radius="rounded">
-                    </a>
+        <div>
+            <div data-c-container="large" data-c-padding="tb(3)">
+                <div data-c-grid="gutter(all, 2)">
+                    <div data-c-grid-item="tl(3of5)">
+                        <a href="{{ .Params.main }}" title="" target="_blank">
+                            <img src="{{ .Params.main }}" alt="" data-c-radius="rounded">
+                        </a>
+                    </div>
+                    <div data-c-grid-item="tl(2of5)">
+                        <div class="post-cta" data-c-padding="all(1)" data-c-radius="rounded" data-c-margin="bottom(2)" data-c-color="white">
+                            {{ if (eq .Params.sale true) }}
+                                <p data-c-font-weight="bold" data-c-font-size="h4" data-c-margin="bottom(1)" data-c-color="c2">Currently for sale.</p>
+                                <p data-c-margin="bottom(1)">Price: ${{ .Params.price }}</p>
+                                <p data-c-margin="bottom(1)">Get in touch with Erin to discuss purchasing this piece.</p>
+                                <a data-c-button="outline(white)" data-c-radius="rounded" href="mailto:erinbesseau@gmail.com" title="Open your default mail client and email Erin.">Get in Touch</a>
+                            {{ else }}
+                                <p data-c-font-weight="bold" data-c-font-size="h4" data-c-margin="bottom(1)" data-c-color="c2">No longer for sale.</p>
+                                <p data-c-margin="bottom(1)">Erin does commission work. Interested in commissioning a piece?</p>
+                                <a data-c-button="outline(white)" data-c-radius="rounded" href="mailto:erinbesseau@gmail.com" title="Open your default mail client and email Erin.">Get in Touch</a>
+                            {{ end }}
+                        </div>
+                        {{ .Content }}
+                    </div>
                 </div>
-                {{ .Content }}
             </div>
         </div>
 	</main>

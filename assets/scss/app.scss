@@ -179,4 +179,11 @@ $clone-grid-columns: 12;
         display: block;
         width: 100%;
     }
+    .post-cta {
+        background: rgb(29,34,38) !important;
+        background: -moz-linear-gradient(320deg, rgba(29,34,38,0.95) 0%, rgba(100,117,81,0.8995799003195029) 100%) !important;
+        background: -webkit-linear-gradient(320deg, rgba(29,34,38,0.95) 0%, rgba(100,117,81,0.8995799003195029) 100%) !important;
+        background: linear-gradient(320deg, rgba(29,34,38,0.95) 0%, rgba(100,117,81,0.8995799003195029) 100%) !important;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d2226",endColorstr="#647551",GradientType=1) !important;
+    }
 }
