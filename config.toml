@@ -1,4 +1,4 @@
-baseURL = "https://erin-besseau-art.netlify.com/"
+baseURL = "https://erinbesseauart.com/"
 languageCode = "en-us"
 title = "Erin Besseau: Art"
 staticDir = ["static", "static/admin", "static/images"]
