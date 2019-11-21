@@ -479,7 +479,7 @@ body[data-clone] {
   line-height: calc(1.5 * .85); }
 
 [data-clone] h1, [data-clone] h2, [data-clone] h3, [data-clone] h4, [data-clone] h5, [data-clone] h6, [data-clone] p, [data-clone] a, [data-clone] span, [data-clone] blockquote, [data-clone] aside, [data-clone] button, [data-clone] label, [data-clone] input, [data-clone] textarea, [data-clone] table, [data-clone] ul, [data-clone] li {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Yantramanav", sans-serif; }
 
 [data-clone] a {
   color: inherit;
@@ -3487,14 +3487,14 @@ body[data-clone] {
   width: 90%; }
 
 [data-clone] [data-c-font="sans"] {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Yantramanav", sans-serif; }
   [data-clone] [data-c-font="sans"] a, [data-clone] [data-c-font="sans"] span {
-    font-family: "Open Sans", sans-serif; }
+    font-family: "Yantramanav", sans-serif; }
 
 [data-clone] [data-c-font="serif"] {
-  font-family: serif; }
+  font-family: "Lora", serif; }
   [data-clone] [data-c-font="serif"] a, [data-clone] [data-c-font="serif"] span {
-    font-family: serif; }
+    font-family: "Lora", serif; }
 
 [data-clone] [data-c-font="script"] {
   font-family: "Euphoria Script", cursive; }
@@ -18441,7 +18441,7 @@ body[data-clone] {
 
 [data-clone] [data-c-button]:not([data-c-button="reset"]) {
   cursor: pointer;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Yantramanav", sans-serif;
   font-size: 1rem;
   outline: none;
   text-align: center;

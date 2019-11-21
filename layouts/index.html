@@ -13,20 +13,21 @@
 					</div>
 					<div data-c-grid-item="tl(3of5)">
 						<div data-c-align="base(center) tl(left)">
-							<h1 data-c-font-size="h1" data-c-color="white" data-c-font-weight="bold">Erin Besseau</h1>
-							<p data-c-color="c4" data-c-margin="top(half)">Erin Besseau is an abstract painter living in Ottawa Ontario, Canada.</p>
-							<p data-c-color="white" data-c-margin="top(normal)">Working with abstract organic forms as well as deliberate geometric designs, Besseau finds inspiration from the world around her. Playing with colours found in nature, she attempts to balance the fluidity of natural forms with intentional, rigid line.</p>
-							<p data-c-color="white" data-c-margin="top(normal)">Currently, she is focusing on creating abstract paintings which attempt to describe a feeling of the longing of places once known. Through the exploration of colour and shape, the forms that emerge in her art show a contrast between organic fluid form and rigid line. These aspects represent the fluid concept of memory and the harsh reality of time. She is 2017 Alumnus of NSCAD University.</p>
-                            <p data-c-color="white" data-c-margin="tb(normal)">
-                                <a class="social-icon" href="" title="Visit Erin on Instagram.">
+							<h1 data-c-font-size="h1" data-c-color="white" data-c-font-weight="" data-c-font="serif">Erin Besseau</h1>
+							<p data-c-color="white" data-c-margin="top(.5)">Erin Besseau is an abstract painter living in Ottawa Ontario, Canada.</p>
+                            <hr data-c-hr="thin(c4)" data-c-margin="tb(.5)">
+							<p data-c-color="white" data-c-margin="top(.5)">Working with abstract organic forms as well as deliberate geometric designs, Besseau finds inspiration from the world around her. Playing with colours found in nature, she attempts to balance the fluidity of natural forms with intentional, rigid line.</p>
+							<p data-c-color="white" data-c-margin="top(.5)">Currently, she is focusing on creating abstract paintings which attempt to describe a feeling of the longing of places once known. Through the exploration of colour and shape, the forms that emerge in her art show a contrast between organic fluid form and rigid line. These aspects represent the fluid concept of memory and the harsh reality of time. She is 2017 Alumnus of NSCAD University.</p>
+                            <p data-c-color="white" data-c-margin="tb(1)">
+                                <a class="social-icon" href="https://www.instagram.com/erinbesseau.art/" title="Visit Erin on Instagram.">
                                     {{ $instagram := resources.Get "images/icons/instagram-white.svg" }}
                                     <img src="{{ $instagram.Permalink }}" alt="The Instagram icon, supplied by Font Awesome.">
                                 </a>
-                                <a class="social-icon" href="" title="Visit Erin on Facebook.">
+                                <a class="social-icon" href="https://www.facebook.com/erinbesseau.a" title="Visit Erin on Facebook.">
                                     {{ $facebook := resources.Get "images/icons/facebook-white.svg" }}
                                     <img src="{{ $facebook.Permalink }}" alt="The Facebook icon supplied by Font Awesome.">
                                 </a>
-                                <a class="social-icon" href="" title="Visit Erin on Twitter.">
+                                <a class="social-icon" href="https://twitter.com/ErinBesseau" title="Visit Erin on Twitter.">
                                     {{ $twitter := resources.Get "images/icons/twitter-white.svg" }}
                                     <img src="{{ $twitter.Permalink }}" alt="The Twitter icon supplied by Font Awesome.">
                                 </a>
@@ -42,7 +43,7 @@
         <div data-c-padding="bottom(3)">
             <div data-c-container="large">
                 <span id="posts"></span>
-                <h2 data-c-font-size="h2" data-c-padding="top(3)" data-c-margin="bottom(2)">Recent Work</h2>
+                <h2 data-c-font-size="h2" data-c-padding="top(3)" data-c-margin="bottom(2)" data-c-font="serif">Recent Work</h2>
                 <div data-c-grid="gutter(all, 2)">
                 {{ with .Site.GetPage "section" "work" }}
                     {{ range .Pages }}
