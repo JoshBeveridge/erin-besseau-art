@@ -9,7 +9,6 @@ sale: true
 price: 90
 main: /images/uploads/abstract_tryptich_1__1_-sq0fz9gs.jpg
 header: /images/uploads/abstract_tryptich_1__1_-sq0fz9gs.jpg
-orientation:
-  - Landscape
+orientation: Landscape
 ---
 Part 1 of a 3 part series
