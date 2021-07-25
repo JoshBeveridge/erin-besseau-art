@@ -6,7 +6,7 @@ media: gouache
 canvas: watercolour paper
 size: 8x10
 sale: true
-price: 94
+price: 90
 main: /images/uploads/arches_1_erinbesseau-tu1fz9gs.jpg
 header: /images/uploads/arches_1_erinbesseau-tu1fz9gs.jpg
 orientation:
