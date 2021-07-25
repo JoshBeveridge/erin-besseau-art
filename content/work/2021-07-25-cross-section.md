@@ -9,7 +9,6 @@ sale: true
 price: 90
 main: /images/uploads/cross_section-yk1fz9gs.jpg
 header: /images/uploads/cross_section-yk1fz9gs.jpg
-orientation:
-  - Landscape
+orientation: Landscape
 ---
 Painted in the summer of 2021
