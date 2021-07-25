@@ -6,7 +6,7 @@ media: gouache
 canvas: watercolour paper
 size: 8x10
 sale: true
-price: 88
+price: 90
 main: /images/uploads/abstract_tryptich_2__3_-xozfz9gs.jpg
 header: /images/uploads/abstract_tryptich_2__3_-xozfz9gs.jpg
 orientation: Landscape
