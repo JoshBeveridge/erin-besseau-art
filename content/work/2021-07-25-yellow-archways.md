@@ -9,7 +9,6 @@ sale: true
 price: 90
 main: /images/uploads/arches_1_erinbesseau-tu1fz9gs.jpg
 header: /images/uploads/arches_1_erinbesseau-tu1fz9gs.jpg
-orientation:
-  - Landscape
+orientation: Portrait
 ---
 Painted in the summer of 2021
