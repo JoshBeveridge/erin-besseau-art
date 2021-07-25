@@ -6,7 +6,7 @@ media: Gouache
 canvas: Water colour paper
 size: 8x10
 sale: true
-price: 88
+price: 90
 main: /images/uploads/cross_section-yk1fz9gs.jpg
 header: /images/uploads/cross_section-yk1fz9gs.jpg
 orientation:
