@@ -9,13 +9,27 @@ layout: base.njk
   {% include "partials/nav.njk.html" %}
   <div
     data-h2-padding="b(x3, x2) m(x3, 0)" 
-    data-h2-container="b(center, medium)"
-    data-h2-text-align="b(center)">
-    <h1
-      data-h2-font-family="b(serif)" 
-      data-h2-margin="b(0, 0, x1, 0)">{{ title }}</h1>
-    {{ content | safe}}
-    <p data-h2-margin="b(x.5, 0, 0, 0)">{{ size }} | {{ media }} on {{ canvas }}</p>
+    data-h2-container="b(center, medium)">
+    <div data-h2-flex-grid="b(flex-end, 0, x2, x1)">
+      <div
+        data-h2-text-align="b(center) s(left)" 
+        data-h2-flex-item="b(1of1) s(fill)">
+        <h1
+          data-h2-font-family="b(serif)" 
+          data-h2-margin="b(0, 0, x1, 0)">{{ title }}</h1>
+        <p>{{ description }}</p>
+        <p data-h2-margin="b(x.5, 0, 0, 0)">{{ size }}<span data-h2-color="b(accent)" data-h2-display="b(inline-block)" data-h2-margin="b(0, x1)">|</span>{{ media }} on {{ canvas }}</p>
+      </div>
+      <div
+        data-h2-text-align="b(center) s(right)" 
+        data-h2-flex-item="b(1of1) s(content)">
+        {% if sale == true %}
+          <p>${{ price }}<span data-h2-color="b(accent)" data-h2-display="b(inline-block)" data-h2-margin="b(0, x1)">|</span><a href="mailto:{{ site.email }}" title="Email Erin to inquire about purchasing this piece." data-h2-color="b(white) b:hover(accent)" data-h2-transition="b(color, .2s, ease, 0s)">Purchase this piece</a></p>
+        {% else %}
+          <p>Already sold</p>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </header>
 

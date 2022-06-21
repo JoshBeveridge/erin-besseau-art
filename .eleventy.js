@@ -6,7 +6,7 @@ var exec = require('child_process').execSync;
 module.exports = function (eleventyConfig) {
 
   // Run Hydrogen before the eleventy build executes
-  eleventyConfig.on('eleventy.before', async () => {
+  eleventyConfig.on('eleventy.after', async () => {
     console.log(exec("npx h2-build").toString());
   });
   
@@ -59,7 +59,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/static/img");
 
   // Copy favicon to route of /_site
-  eleventyConfig.addPassthroughCopy({"./src/static/img/favicons": "./static/img/favicons"});
+  eleventyConfig.addPassthroughCopy({"./src/static/img/favicons": "./"});
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     return content;
