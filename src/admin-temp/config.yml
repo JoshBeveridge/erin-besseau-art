@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+# This line should *not* be indented
+publish_mode: editorial_workflow
+# These lines should *not* be indented
+media_folder: "src/static/img/artwork" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/static/img/artwork" # The src attribute for uploaded media will begin with /images/uploads
+
+# Please run "npx netlify-cms-proxy-server" for local backend
+local_backend: true
+
+# Collections
+collections:
+  - name: "work" # Used in routes, e.g., /admin/collections/blog
+    label: "Work" # Used in the UI
+    folder: "content/work" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "artwork.njk"}
+      - {label: "Title", required: true, name: "title", widget: "string"}
+      - {label: "Publish Date", required: true, name: "date", widget: "datetime"}
+      - {label: "Types of Media Used", required: true, name: "media", widget: "string"}
+      - {label: "Canvas", name: "canvas", widget: "string"}
+      - {label: "Size of Work", name: "size", widget: "string"}
+      - {label: "For Sale?", name: "sale", widget: "boolean", default: true}
+      - {label: "Price", name: "price", widget: "number"}
+      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Main Image", required: true, name: "main", widget: "image"}
+      - {label: "Header Image", required: true, name: "header", widget: "image"}
+      - {label: "Orientation", name: "orientation", widget: "select", options: ["Landscape", "Portrait"], default: ["Landscape"]}

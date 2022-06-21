@@ -1,0 +1,37 @@
+---
+layout: base.njk
+---
+<header
+  style="background-image: url('/static/img/flower-hg-splash.jpg'); background-position: center center; background-size: cover;"
+  data-h2-overlay="b(darkest.primary, .8)"
+  data-h2-font-color="b(white)"
+  data-h2-position="b(relative)">
+  {% include "partials/nav.njk.html" %}
+  <div
+    data-h2-padding="b(x3, x2) m(x3, 0)" 
+    data-h2-container="b(center, medium)"
+    data-h2-text-align="b(center)">
+    <h1
+      data-h2-font-family="b(serif)" 
+      data-h2-margin="b(0, 0, x1, 0)">{{ title }}</h1>
+    {{ content | safe}}
+    <p data-h2-margin="b(x.5, 0, 0, 0)">{{ size }} | {{ media }} on {{ canvas }}</p>
+  </div>
+</header>
+
+<main
+  data-h2-background-color="b(rgb(238 243 245))"
+  data-h2-padding="b(x3, x2) m(x3, 0)">
+  {% if orientation == "portrait" %}
+    <div data-h2-container="b(center, small)">
+  {% elseif orientation == "landscape" %}
+    <div data-h2-container="b(center, medium)">
+  {% endif %}
+    <img
+      alt=""
+      src="{{ image }}"
+      data-h2-shadow="b(xl)">
+  </div>
+</main>
+
+{% include './partials/footer.njk.html' %}
