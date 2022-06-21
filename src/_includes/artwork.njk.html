@@ -18,7 +18,11 @@ layout: base.njk
           data-h2-font-family="b(serif)" 
           data-h2-margin="b(0, 0, x1, 0)">{{ title }}</h1>
         <p>{{ description }}</p>
-        <p data-h2-margin="b(x.5, 0, 0, 0)">{{ size }}<span data-h2-color="b(accent)" data-h2-display="b(inline-block)" data-h2-margin="b(0, x1)">|</span>{{ media }} on {{ canvas }}</p>
+        <p data-h2-margin="b(x.5, 0, 0, 0)">
+          <span data-h2-display="b(block) s(inline-block)">{{ media }} on {{ canvas }}</span>
+          <span data-h2-color="b(accent)" data-h2-display="b(none) s(inline-block)" data-h2-margin="b(0, x1)">|</span>
+          <span data-h2-display="b(block) s(inline-block)">{{ size }}</span>  
+        </p>
       </div>
       <div
         data-h2-text-align="b(center) s(right)" 
