@@ -8,7 +8,7 @@
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@tailwindcss/typography": "^0.3.1",
-    "@hydrogen-design-system/hydrogen.css": "^2.0.0-beta.13",
+    "@hydrogen-design-system/hydrogen.css": "^2.0.0-beta.14",
     "autoprefixer": "^10.1.0",
     "postcss": "^8.2.1",
     "alpinejs": "^3.2.4",

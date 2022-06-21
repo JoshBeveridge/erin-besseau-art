@@ -9,7 +9,7 @@
   "input": [
     "src/_includes"
   ],
-  "output": "_site/static/css",
+  "output": "src/static/css",
   "variables": {
     "css": true,
     "sass": false

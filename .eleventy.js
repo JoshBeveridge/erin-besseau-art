@@ -6,7 +6,7 @@ var exec = require('child_process').execSync;
 module.exports = function (eleventyConfig) {
 
   // Run Hydrogen before the eleventy build executes
-  eleventyConfig.on('eleventy.after', async () => {
+  eleventyConfig.on('eleventy.before', async () => {
     console.log(exec("npx h2-build").toString());
   });
   
