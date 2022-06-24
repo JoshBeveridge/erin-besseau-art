@@ -32,7 +32,9 @@ layout: base.njk
         data-h2-order="b(1) s(2)" 
         data-h2-flex-item="b(1of1) s(1of2) m(3of5)"
         data-h2-text-align="b(center) m(left)">
-        <h1 data-h2-font-family="b(serif)">{{ site.home.title }}</h1>
+        <h1 
+          data-h2-font-size="b(h1, 1)"
+          data-h2-font-family="b(serif)">{{ site.home.title }}</h1>
         <p data-h2-margin="b(x1, 0)">{{ site.home.subtitle }}</p>
         <hr
           data-h2-margin="b(x1, 0)"
@@ -115,7 +117,7 @@ layout: base.njk
           <a
             data-h2-font-color="b(white) b:hover(accent)"
             data-h2-transition="b(color, .3s, ease)"
-            href="#artwork"
+            href="#main"
             title=""
             data-h2-vertical-align="b(middle)">View Erin's work<?xml version="1.0" encoding="utf-8"?><svg data-h2-margin="b(auto, auto, auto, x.25)" data-h2-vertical-align="b(middle)" data-h2-width="b(x1)" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
@@ -133,7 +135,7 @@ layout: base.njk
 </header>
 
 <main
-  id="artwork"
+  id="main"
   data-h2-background-color="b(rgb(238 243 245))">
   <div
     data-h2-padding="b(x3, x2, x4, x2) m(x4, 0, x5, 0)" 
@@ -142,7 +144,7 @@ layout: base.njk
       <div data-h2-flex-item="b(1of1)">
         <h2
           data-h2-text-align="b(center) s(left)" 
-          data-h2-font-size="b(h2, 1.3)"
+          data-h2-font-size="b(h2, 1)"
           data-h2-font-family="b(serif)">{{ site.home.galleryTitle }}</h2>
       </div>
       {% for post in collections.artwork %}
@@ -153,7 +155,7 @@ layout: base.njk
             style="background-image: url('{{ post.data.homeImage }}'); background-position: center center; background-size: cover;"
             data-h2-display="b(block)"
             data-h2-shadow="b(m) b:hover(xxl)"
-            data-h2-height="b(40vh) s(30vh)"
+            data-h2-height="b(x13)"
             data-h2-transition="b(box-shadow, .2s, ease, 0s) b:hover(box-shadow, .2s, ease, 0s)"
             data-h2-width="b(100%)"></a>
         </div>

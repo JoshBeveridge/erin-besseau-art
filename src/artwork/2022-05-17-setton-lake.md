@@ -8,6 +8,13 @@ canvas: 100% Cotton Paper
 size: 9"x12"
 sale: false
 price: 100
+prints:
+  enabled: true
+  options:
+    - size: 8"x10"
+      price: 20
+    - size: 11"x14"
+      price: 30
 image: /static/img/artwork/setton-site.jpg
 homeImage: /static/img/artwork/setton-home.jpg
 orientation: landscape

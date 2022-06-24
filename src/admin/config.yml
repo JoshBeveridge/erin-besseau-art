@@ -113,6 +113,34 @@ collections:
         name: "price"
         widget: "number"
         required: true
+      - label: "Prints"
+        hint: "This information defines specific sizes and prices for prints of this artwork."
+        name: "prints"
+        widget: "object"
+        required: true
+        fields:
+          - label: "Print availability"
+            hint: "This option sets whether prints will appear as being available for this piece."
+            name: "enabled"
+            widget: "boolean"
+            default: true
+            required: true
+          - label: "Print options"
+            hint: "This setting allows you to define as many print options as you want for purchase."
+            name: "options"
+            widget: "list"
+            allow_add: true
+            fields:
+              - label: "Print size"
+                hint: "The size of the print."
+                name: "size"
+                widget: "string"
+                required: true
+              - label: "Print price"
+                hint: "The price of this size of print."
+                name: "price"
+                widget: "number"
+                required: true
       - label: "Main image"
         hint: "The main artwork. This image will show on the artwork's page and should be no larger than 2000px wide."
         name: "image"

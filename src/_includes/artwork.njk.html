@@ -27,10 +27,14 @@ layout: base.njk
       <div
         data-h2-text-align="b(center) s(right)" 
         data-h2-flex-item="b(1of1) s(content)">
-        {% if sale == true %}
-          <p>${{ price }}<span data-h2-color="b(accent)" data-h2-display="b(inline-block)" data-h2-margin="b(0, x1)">|</span><a href="mailto:{{ site.email }}" title="Email Erin to inquire about purchasing this piece." data-h2-color="b(white) b:hover(accent)" data-h2-transition="b(color, .2s, ease, 0s)">Purchase this piece</a></p>
+        {% if sale == true or prints.enabled == true %}
+          <a 
+            href="#purchase" 
+            title="Learn more about how to purchase this piece, either as original artwork or as a print depending on availability."
+            data-h2-color="b(white) b:hover(accent)"
+            data-h2-transition="b(color, .2s, ease, 0s)">Purchase this piece</a>
         {% else %}
-          <p>Already sold</p>
+          <p>Not available for purchase</p>
         {% endif %}
       </div>
     </div>
@@ -39,16 +43,143 @@ layout: base.njk
 
 <main
   data-h2-background-color="b(rgb(238 243 245))"
-  data-h2-padding="b(x3, x2) m(x3, 0)">
-  {% if orientation == "portrait" %}
-    <div data-h2-container="b(center, small)">
-  {% elseif orientation == "landscape" %}
-    <div data-h2-container="b(center, medium)">
+  data-h2-padding="b(x3, 0, 0, 0) m(x3, 0, 0, 0)"
+  id="main">
+  <div data-h2-padding="b(0, x2)">
+    {% if orientation == "portrait" %}
+      <div data-h2-container="b(center, small)">
+    {% elseif orientation == "landscape" %}
+      <div data-h2-container="b(center, medium)">
+    {% endif %}
+      <img
+        alt=""
+        src="{{ image }}"
+        data-h2-display="b(block)"
+        data-h2-shadow="b(xl)">
+      </div>
+  </div>
+  {% if sale == true or prints.enabled == true %}
+    <div 
+      id="purchase"
+      data-h2-background-color="b(darker.primary)"
+      data-h2-padding="b(x3, x2)"
+      data-h2-margin="b(x3, 0, 0, 0)">
+      <div
+        data-h2-container="b(center, small)"
+        data-h2-color="b(white)">
+        <h2
+          data-h2-font-size="b(h4, 1)"
+          data-h2-font-family="b(serif)"
+          data-h2-text-align="b(center) s(left)">Purchase "{{ title }}"</h2>
+        <p data-h2-margin="b(x1, 0, 0, 0)">This piece is currently available in the following formats:</p>
+        <ul>
+          {% if sale == true %}
+            <li>{{ size }} <span data-h2-color="b(accent)">original work</span> for CAD${{ price }}</li>
+          {% endif %}
+          {% if prints.enabled == true %}
+            {% for item in prints.options %}
+              <li>{{ item.size }} <span data-h2-color="b(accent)">print</span> for CAD${{ item.price }}</li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+        <p data-h2-margin="b(x1, 0)">You can submit an order request using the form below, and we'll do our best to get back to you as soon as possible.</p>
+        <form 
+          name="contact" 
+          method="POST" 
+          data-netlify="true"
+          data-netlify-recaptcha="true"
+          data-h2-display="b(block)"
+          data-h2-width="b(100%)">
+          <div data-h2-flex-grid="b(center, 0, x2, x1)">
+            <div data-h2-flex-item="b(1of1) s(1of2)">
+              <label>
+                <span>Your name *</span>
+                <input 
+                  data-h2-display="b(block)"
+                  data-h2-padding="b(x.25)"
+                  data-h2-width="b(100%)"
+                  required
+                  type="text">
+              </label>
+            </div>
+            <div data-h2-flex-item="b(1of1) s(1of2)">
+              <label>
+                <span>Your email *</span>
+                <input 
+                  data-h2-display="b(block)"
+                  data-h2-padding="b(x.25)"
+                  data-h2-width="b(100%)"
+                  required
+                  type="email">
+              </label>
+            </div>
+            <div 
+              data-h2-display="b(none)"
+              data-h2-flex-item="b(1of1)">
+              <label>
+                <span>Artwork *</span>
+                <input 
+                  data-h2-display="b(block)"
+                  data-h2-padding="b(x.25)"
+                  data-h2-width="b(100%)"
+                  required
+                  type="text"
+                  value="{{ title }}">
+              </label>
+            </div>
+            <div data-h2-flex-item="b(1of1)">
+              <label>
+                <span>Requested format *</span>
+                <select
+                  data-h2-display="b(block)"
+                  data-h2-padding="b(x.25)"
+                  data-h2-width="b(100%)"
+                  required>
+                  {% if sale == true %}
+                    <option>I'm interested in purchasing the original piece.</option>
+                  {% endif %}
+                  {% if prints.enabled == true %}
+                    {% for item in prints.options %}
+                      <option>I'm interested in purchasing a(n) {{ item.size }} print.</option>
+                    {% endfor %}
+                  {% endif %}
+                </select>
+              </label>
+            </div>
+            <div data-h2-flex-item="b(1of1)">
+              <label>
+                <span>Other information</span>
+                <textarea
+                  data-h2-display="b(block)"
+                  data-h2-padding="b(x.25)"
+                  data-h2-width="b(100%)"
+                  data-h2-min-height="b(x5)"></textarea>
+              </label>
+            </div>
+            <div
+              data-h2-text-align="b(center) s(left)" 
+              data-h2-flex-item="b(1of1) s(1of2)">
+              <div data-netlify-recaptcha="true"></div>
+            </div>
+            <div
+              data-h2-text-align="b(center) s(right)" 
+              data-h2-flex-item="b(1of1) s(1of2)">
+              <button
+                type="submit"
+                data-h2-border="b(all, 1px, solid, white)"
+                data-h2-cursor="b(pointer)"
+                data-h2-background-color="b(white.1) b:hover(white)"
+                data-h2-padding="b(x.5, x2)"
+                data-h2-color="b(white) b:hover(darker.primary)"
+                data-h2-transition="b(all, .2s, ease, 0s)">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   {% endif %}
-    <img
-      alt=""
-      src="{{ image }}"
-      data-h2-shadow="b(xl)">
   </div>
 </main>
 
