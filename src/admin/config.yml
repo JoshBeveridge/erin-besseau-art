@@ -1,0 +1,162 @@
+# Backend
+backend:
+  name: git-gateway
+  branch: master
+# Publish mode 
+publish_mode: editorial_workflow
+# Media storage
+media_folder: "src/static/img/artwork"
+public_folder: "/static/img/artwork"
+# Enable local backend - npx netlify-cms-proxy-server
+local_backend: true
+# Collections
+collections:
+  - label: "Settings"
+    name: "settings"
+    editor:
+      preview: false
+    files:
+      - label: "Site settings"
+        name: "settings"
+        file: "src/_data/site.yaml"
+        fields:
+          - label: "Your email"
+            hint: "This will be the email that shows up in any contact links."
+            name: "email"
+            widget: "string"
+            required: true
+          - label: "Your Instagram"
+            hint: "This should be the full link to your Instagram page."
+            name: "instagram"
+            widget: "string"
+            required: true
+          - label: "Your Facebook"
+            hint: "This should be the full link to your Facebook page."
+            name: "facebook"
+            widget: "string"
+            required: true
+          - label: "Your Twitter"
+            hint: "This should be the full link to your Twitter page."
+            name: "twitter"
+            widget: "string"
+            required: true
+          - label: "Homepage content"
+            hint: "Below is all the content found on the homepage."
+            name: "home"
+            widget: "object"
+            fields:
+              - label: "Title"
+                hint: "This title appears at the top of the page."
+                name: "title"
+                widget: "string"
+                required: true
+              - label: "Subtitle / slogan"
+                hint: "This text appears directly below the title, above the divider."
+                name: "subtitle"
+                widget: "string"
+                required: true
+              - label: "Statement"
+                hint: "This text appears below the divider. You can use <br> tags to create new paragraphs."
+                name: "content"
+                widget: "text"
+                required: true
+              - label: "Gallery title"
+                hint: "This title appears above your artwork."
+                name: "galleryTitle"
+                widget: "string"
+                required: true
+  - label: "Artwork"
+    name: "artwork"
+    editor:
+      preview: false
+    folder: "src/artwork"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Layout"
+        name: "layout" 
+        widget: "hidden"
+        default: "artwork.njk"
+      - label: "Title"
+        hint: "The title of the piece."
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Description"
+        hint: "A short description."
+        name: "description"
+        widget: "string"
+        required: true
+      - label: "Media"
+        hint: "The types of media used in the piece."
+        name: "media"
+        widget: "string"
+        required: true
+      - label: "Canvas / surface"
+        hint: "The material used as a canvas."
+        name: "canvas"
+        widget: "string"
+        required: true
+      - label: "Size of work"
+        hint: "The size of the work (A\"xB\" format)"
+        name: "size"
+        widget: "string"
+        required: true
+      - label: "Purchase status"
+        hint: "Whether this piece is available for purchase. Togging this on means the piece will show as available."
+        name: "sale"
+        widget: "boolean"
+        default: true
+        required: true
+      - label: "Price"
+        hint: "The price of the piece, as a number. The site will add the dollar sign for you."
+        name: "price"
+        widget: "number"
+        required: true
+      - label: "Prints"
+        hint: "This information defines specific sizes and prices for prints of this artwork."
+        name: "prints"
+        widget: "object"
+        required: true
+        fields:
+          - label: "Print availability"
+            hint: "This option sets whether prints will appear as being available for this piece."
+            name: "enabled"
+            widget: "boolean"
+            default: true
+            required: true
+          - label: "Print options"
+            hint: "This setting allows you to define as many print options as you want for purchase."
+            name: "options"
+            widget: "list"
+            allow_add: true
+            fields:
+              - label: "Print size"
+                hint: "The size of the print."
+                name: "size"
+                widget: "string"
+                required: true
+              - label: "Print price"
+                hint: "The price of this size of print."
+                name: "price"
+                widget: "number"
+                required: true
+      - label: "Main image"
+        hint: "The main artwork. This image will show on the artwork's page and should be no larger than 2000px wide."
+        name: "image"
+        widget: "image"
+        required: true
+      - label: "Homepage image"
+        hint: "A custom crop that for the artwork that will appear on the homepage gallery grid. This piece should be a square-ish crop and no larger than 500px."
+        name: "homeImage"
+        widget: "image"
+        required: true
+      - label: "Orientation"
+        hint: "The general orientation of the artwork. This is used to determine how wide the image will be on the artwork page."
+        name: "orientation"
+        widget: "select"
+        options:
+          - "landscape"
+          - "portrait"
+        default: "landscape"
+        required: true
