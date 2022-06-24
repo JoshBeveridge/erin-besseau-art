@@ -99,7 +99,8 @@ layout: base.njk
                   data-h2-padding="b(x.25)"
                   data-h2-width="b(100%)"
                   required
-                  type="text">
+                  type="text"
+                  name="Name">
               </label>
             </div>
             <div data-h2-flex-item="b(1of1) s(1of2)">
@@ -110,7 +111,8 @@ layout: base.njk
                   data-h2-padding="b(x.25)"
                   data-h2-width="b(100%)"
                   required
-                  type="email">
+                  type="email"
+                  name="Email">
               </label>
             </div>
             <div 
@@ -124,7 +126,8 @@ layout: base.njk
                   data-h2-width="b(100%)"
                   required
                   type="text"
-                  value="{{ title }}">
+                  value="{{ title }}"
+                  name="Artwork">
               </label>
             </div>
             <div data-h2-flex-item="b(1of1)">
@@ -134,7 +137,8 @@ layout: base.njk
                   data-h2-display="b(block)"
                   data-h2-padding="b(x.25)"
                   data-h2-width="b(100%)"
-                  required>
+                  required
+                  name="Format">
                   {% if sale == true %}
                     <option>I'm interested in purchasing the original piece.</option>
                   {% endif %}
@@ -153,7 +157,8 @@ layout: base.njk
                   data-h2-display="b(block)"
                   data-h2-padding="b(x.25)"
                   data-h2-width="b(100%)"
-                  data-h2-min-height="b(x5)"></textarea>
+                  data-h2-min-height="b(x5)"
+                  name="Other"></textarea>
               </label>
             </div>
             <div
